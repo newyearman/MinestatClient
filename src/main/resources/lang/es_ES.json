@@ -22,5 +22,34 @@
   "login.remember": "Recuérdame",
   "login.switch": "Cambiar modo",
   "login.microsoft": "Iniciar sesión con Microsoft",
-  "login.mojang": "Iniciar sesión con Mojang"
+  "login.mojang": "Iniciar sesión con Mojang",
+  
+  "video.vsync": "Sincronización vertical",
+  "video.renderDistance": "Distancia de renderizado",
+  "video.shadows": "Sombras",
+  "video.particleDensity": "Densidad de partículas",
+  "video.smoothLighting": "Iluminación suave",
+  "video.guiScale": "Escala de interfaz",
+  "video.maxFps": "FPS máximo",
+  
+  "performance.dynamicFps": "FPS dinámico",
+  "performance.fastRender": "Renderizado rápido",
+  "performance.smoothFps": "FPS suave",
+  "performance.chunkOptimization": "Optimización de chunks",
+  "performance.entityRenderDistance": "Distancia de renderizado de entidades",
+  "performance.particleOptimization": "Optimización de partículas",
+  
+  "cosmetic.cape": "Capa",
+  "cosmetic.wings": "Alas",
+  "cosmetic.hat": "Sombrero",
+  "cosmetic.particle": "Efecto de partícula",
+  "cosmetic.emote": "Emote",
+  "cosmetic.none": "Ninguno",
+  "cosmetic.equip": "Equipar",
+  "cosmetic.preview": "Vista previa",
+  "cosmetic.store": "Tienda",
+  "cosmetic.inventory": "Inventario",
+  
+  "version.select": "Seleccionar versión",
+  "version.current": "Versión actual"
 }
