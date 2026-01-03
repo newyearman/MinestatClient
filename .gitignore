@@ -44,6 +44,7 @@ crash-reports/
 # Build artifacts
 *.jar
 !gradle/wrapper/gradle-wrapper.jar
+*.exe
 
 # Config
 config/
