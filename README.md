@@ -63,7 +63,7 @@ Compatible with:
 
 ### Prerequisites
 - Java 8 or higher
-- Gradle 7.0 or higher
+- Gradle 7.0 or higher (or use included Gradle wrapper)
 
 ### Building from Source
 
@@ -72,29 +72,53 @@ Compatible with:
 git clone https://github.com/newyearman/MinestatClient.git
 cd MinestatClient
 
-# Build with Gradle
-gradle build
+# Build with Gradle wrapper (recommended)
+./gradlew build
 
-# Run the client
-gradle run
+# Or use system Gradle
+gradle build
 ```
 
-### Building JAR
+## Building
+
+### Build Fat JAR (with all dependencies):
+```bash
+./gradlew shadowJar
+```
+
+Output: `build/libs/MinestatClient-1.0.0-all.jar`
+
+The fat JAR includes all runtime dependencies (log4j, gson, sqlite-jdbc, okhttp) and can be run standalone:
+```bash
+java -jar build/libs/MinestatClient-1.0.0-all.jar
+```
+
+### Create Windows EXE:
+1. Download Launch4j: https://launch4j.sourceforge.net/
+2. Configure:
+   - **Output file:** `MinestatClient.exe`
+   - **Jar:** `build/libs/MinestatClient-1.0.0-all.jar`
+   - **Main class:** `com.minestat.client.MinestatClient`
+   - **Min JRE version:** `1.8.0`
+3. Click "Build wrapper"
+
+### Other Build Options
 
 ```bash
-# Build fat JAR with all dependencies
-gradle jar
+# Build regular JAR (without dependencies)
+./gradlew jar
 
-# The JAR will be in build/libs/
-java -jar build/libs/MinestatClient-1.0.0.jar
+# Build sources JAR
+./gradlew sourcesJar
+
+# Build javadoc JAR
+./gradlew javadocJar
+
+# Clean build directory
+./gradlew clean
 ```
 
-**Note**: The build produces three artifacts:
-- `MinestatClient-1.0.0.jar` - Main client JAR
-- `MinestatClient-1.0.0-sources.jar` - Source code JAR
-- `MinestatClient-1.0.0-javadoc.jar` - JavaDoc documentation
-
-Some optional features (Discord RPC, LWJGL rendering, Mixin) require additional runtime dependencies that would typically be provided by Minecraft's Forge or Fabric loader in a production environment.
+**Note**: The shadowJar task produces a fat JAR that includes all dependencies. For development or deployment in Minecraft modding environments (Forge/Fabric), use the regular `jar` task instead, as the modding platform will provide the required dependencies.
 
 ## 📁 Project Structure
 
