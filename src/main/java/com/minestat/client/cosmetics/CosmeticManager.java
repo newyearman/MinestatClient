@@ -36,23 +36,23 @@ public class CosmeticManager {
     
     private void loadDefaultCosmetics() {
         // Add default cosmetics to inventory
-        inventory.addCosmetic(new Cosmetic("none", "None", CosmeticType.CAPE, 0));
+        inventory.addCosmetic(new Cosmetic("none_cape", "None", CosmeticType.CAPE, 0));
         inventory.addCosmetic(new Cosmetic("default_cape", "Default Cape", CosmeticType.CAPE, 0));
         inventory.addCosmetic(new Cosmetic("red_cape", "Red Cape", CosmeticType.CAPE, 100));
         
-        inventory.addCosmetic(new Cosmetic("none", "None", CosmeticType.WINGS, 0));
+        inventory.addCosmetic(new Cosmetic("none_wings", "None", CosmeticType.WINGS, 0));
         inventory.addCosmetic(new Cosmetic("angel_wings", "Angel Wings", CosmeticType.WINGS, 500));
         inventory.addCosmetic(new Cosmetic("demon_wings", "Demon Wings", CosmeticType.WINGS, 500));
         
-        inventory.addCosmetic(new Cosmetic("none", "None", CosmeticType.HAT, 0));
+        inventory.addCosmetic(new Cosmetic("none_hat", "None", CosmeticType.HAT, 0));
         inventory.addCosmetic(new Cosmetic("top_hat", "Top Hat", CosmeticType.HAT, 200));
         inventory.addCosmetic(new Cosmetic("crown", "Crown", CosmeticType.HAT, 300));
         
-        inventory.addCosmetic(new Cosmetic("none", "None", CosmeticType.PARTICLE, 0));
+        inventory.addCosmetic(new Cosmetic("none_particle", "None", CosmeticType.PARTICLE, 0));
         inventory.addCosmetic(new Cosmetic("hearts", "Hearts", CosmeticType.PARTICLE, 150));
         inventory.addCosmetic(new Cosmetic("flames", "Flames", CosmeticType.PARTICLE, 200));
         
-        inventory.addCosmetic(new Cosmetic("none", "None", CosmeticType.EMOTE, 0));
+        inventory.addCosmetic(new Cosmetic("none_emote", "None", CosmeticType.EMOTE, 0));
         inventory.addCosmetic(new Cosmetic("wave", "Wave", CosmeticType.EMOTE, 50));
         inventory.addCosmetic(new Cosmetic("dance", "Dance", CosmeticType.EMOTE, 100));
     }

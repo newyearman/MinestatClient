@@ -141,6 +141,7 @@ public class OfflineAuthProvider {
     
     /**
      * Hash password using SHA-256
+     * Note: In production, use bcrypt or PBKDF2 with salt for better security
      */
     private String hashPassword(String password) {
         try {
@@ -158,7 +159,7 @@ public class OfflineAuthProvider {
             
         } catch (Exception e) {
             LOGGER.error("Failed to hash password", e);
-            return password; // Fallback (not secure)
+            throw new RuntimeException("Password hashing failed", e);
         }
     }
     

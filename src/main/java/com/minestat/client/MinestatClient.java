@@ -36,10 +36,10 @@ public class MinestatClient {
     private boolean running = false;
     
     /**
-     * Gets the singleton instance of MinestatClient
+     * Gets the singleton instance of MinestatClient (thread-safe)
      * @return MinestatClient instance
      */
-    public static MinestatClient getInstance() {
+    public static synchronized MinestatClient getInstance() {
         if (instance == null) {
             instance = new MinestatClient();
         }

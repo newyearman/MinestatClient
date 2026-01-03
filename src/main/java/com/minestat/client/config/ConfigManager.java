@@ -120,10 +120,10 @@ public class ConfigManager {
     }
     
     public static class CosmeticSettings {
-        public String selectedCape = "none";
-        public String selectedWings = "none";
-        public String selectedHat = "none";
-        public String selectedParticle = "none";
+        public String selectedCape = "none_cape";
+        public String selectedWings = "none_wings";
+        public String selectedHat = "none_hat";
+        public String selectedParticle = "none_particle";
         public boolean showCosmetics = true;
     }
     
