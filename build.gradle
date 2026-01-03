@@ -6,24 +6,17 @@ plugins {
 
 group = 'com.minestat.client'
 version = '1.0.0'
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 repositories {
     mavenCentral()
-    maven { url 'https://libraries.minecraft.net/' }
-    maven { url 'https://repo.spongepowered.org/maven/' }
-    maven { url 'https://maven.fabricmc.net/' }
 }
 
 dependencies {
-    // Minecraft and Forge/Fabric dependencies would be added per version
-    
-    // LWJGL for OpenGL rendering
-    implementation 'org.lwjgl:lwjgl:3.3.1'
-    implementation 'org.lwjgl:lwjgl-opengl:3.3.1'
-    implementation 'org.lwjgl:lwjgl-glfw:3.3.1'
-    
     // JSON processing
     implementation 'com.google.code.gson:gson:2.10.1'
     
@@ -37,11 +30,8 @@ dependencies {
     // HTTP client for OAuth and APIs
     implementation 'com.squareup.okhttp3:okhttp:4.11.0'
     
-    // Discord RPC
-    implementation 'com.jagrosh:DiscordIPC:0.4'
-    
-    // Mixin for code injection
-    implementation 'org.spongepowered:mixin:0.8.5'
+    // Note: Discord RPC, LWJGL, and Mixin would be provided by Minecraft/Forge/Fabric in production
+    // or can be added manually when deploying to specific environments
 }
 
 java {

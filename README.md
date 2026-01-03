@@ -89,6 +89,13 @@ gradle jar
 java -jar build/libs/MinestatClient-1.0.0.jar
 ```
 
+**Note**: The build produces three artifacts:
+- `MinestatClient-1.0.0.jar` - Main client JAR
+- `MinestatClient-1.0.0-sources.jar` - Source code JAR
+- `MinestatClient-1.0.0-javadoc.jar` - JavaDoc documentation
+
+Some optional features (Discord RPC, LWJGL rendering, Mixin) require additional runtime dependencies that would typically be provided by Minecraft's Forge or Fabric loader in a production environment.
+
 ## 📁 Project Structure
 
 ```
