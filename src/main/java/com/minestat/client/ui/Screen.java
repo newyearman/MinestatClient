@@ -1,33 +1,53 @@
 package com.minestat.client.ui;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
- * Base class for UI screens
+ * Base class for UI screens using Swing
  */
-public abstract class Screen {
+public abstract class Screen extends JFrame {
     
-    protected boolean visible = false;
+    protected boolean initialized = false;
+    
+    public Screen(String title) {
+        super(title);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setResizable(false);
+    }
+    
+    /**
+     * Initialize the screen components
+     */
+    protected abstract void initComponents();
     
     /**
      * Show the screen
      */
     public void show() {
-        visible = true;
+        if (!initialized) {
+            initComponents();
+            initialized = true;
+            pack();
+            centerWindow();
+        }
         onShow();
+        setVisible(true);
     }
     
     /**
      * Hide the screen
      */
     public void hide() {
-        visible = false;
+        setVisible(false);
         onHide();
     }
     
     /**
-     * Check if screen is visible
+     * Center window on screen
      */
-    public boolean isVisible() {
-        return visible;
+    protected void centerWindow() {
+        setLocationRelativeTo(null);
     }
     
     /**
@@ -39,19 +59,4 @@ public abstract class Screen {
      * Called when screen is hidden
      */
     protected abstract void onHide();
-    
-    /**
-     * Render the screen
-     */
-    public abstract void render(int mouseX, int mouseY, float partialTicks);
-    
-    /**
-     * Handle mouse click
-     */
-    public abstract void handleMouseClick(int mouseX, int mouseY, int button);
-    
-    /**
-     * Handle key press
-     */
-    public abstract void handleKeyPress(int keyCode, char typedChar);
 }

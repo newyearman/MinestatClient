@@ -9,6 +9,8 @@ import com.minestat.client.version.VersionManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.swing.*;
+
 /**
  * Main class for MinestatClient
  * A professional, full-featured Minecraft client with multi-version support,
@@ -167,19 +169,26 @@ public class MinestatClient {
      * Main entry point
      */
     public static void main(String[] args) {
-        try {
-            MinestatClient client = MinestatClient.getInstance();
-            client.initialize();
-            client.start();
-            
-            // Add shutdown hook
-            Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-                client.shutdown();
-            }));
-            
-        } catch (Exception e) {
-            LOGGER.fatal("Failed to start client", e);
-            System.exit(1);
-        }
+        // Set cross-platform properties
+        System.setProperty("apple.laf.useScreenMenuBar", "true");
+        System.setProperty("com.apple.mrj.application.apple.menu.about.name", CLIENT_NAME);
+        
+        // Start GUI on Swing Event Dispatch Thread
+        SwingUtilities.invokeLater(() -> {
+            try {
+                MinestatClient client = MinestatClient.getInstance();
+                client.initialize();
+                client.start();
+                
+                // Add shutdown hook
+                Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                    client.shutdown();
+                }));
+                
+            } catch (Exception e) {
+                LOGGER.fatal("Failed to start client", e);
+                System.exit(1);
+            }
+        });
     }
 }

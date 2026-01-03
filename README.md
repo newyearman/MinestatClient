@@ -94,13 +94,69 @@ java -jar build/libs/MinestatClient-1.0.0-all.jar
 ```
 
 ### Create Windows EXE:
-1. Download Launch4j: https://launch4j.sourceforge.net/
-2. Configure:
-   - **Output file:** `MinestatClient.exe`
-   - **Jar:** `build/libs/MinestatClient-1.0.0-all.jar`
-   - **Main class:** `com.minestat.client.MinestatClient`
-   - **Min JRE version:** `1.8.0`
-3. Click "Build wrapper"
+
+#### Prerequisites
+1. **Java 8 or higher** - Make sure Java is installed and JAVA_HOME is set
+2. **Launch4j** - Download from https://launch4j.sourceforge.net/
+
+#### Step-by-Step Instructions
+
+1. **Build the fat JAR first:**
+   ```bash
+   ./gradlew shadowJar
+   ```
+   This creates `build/libs/MinestatClient-1.0.0-all.jar`
+
+2. **Using Launch4j GUI:**
+   - Download and install Launch4j from https://launch4j.sourceforge.net/
+   - Open Launch4j
+   - Load the provided configuration: `File > Load config` → select `launch4j.xml`
+   - Click the "Build wrapper" button (gear icon)
+   - The `MinestatClient.exe` will be created in the project root
+
+3. **Using Launch4j Command Line:**
+   ```bash
+   # Windows
+   launch4jc.exe launch4j.xml
+   
+   # Linux/Mac (with Wine)
+   launch4j launch4j.xml
+   ```
+
+4. **Run the EXE:**
+   - Double-click `MinestatClient.exe` to launch
+   - The application will use your system's Java installation
+   - Minimum Java 8 required
+
+#### Configuration Details
+
+The `launch4j.xml` file includes:
+- **Main class:** `com.minestat.client.MinestatClient`
+- **Min JRE version:** `1.8.0`
+- **JAR path:** `build/libs/MinestatClient-1.0.0-all.jar`
+- **Icon:** `src/main/resources/icon.ico`
+- **GUI application** (no console window)
+- **Heap size:** 128MB initial, 1GB max
+
+#### Troubleshooting
+
+**"Java not found" error:**
+- Ensure Java 8+ is installed: `java -version`
+- Set JAVA_HOME environment variable
+- Make sure Java is in your PATH
+
+**"JAR not found" error:**
+- Run `./gradlew shadowJar` to build the JAR first
+- Verify `build/libs/MinestatClient-1.0.0-all.jar` exists
+
+**EXE won't start:**
+- Right-click the EXE → Properties → Compatibility
+- Try "Run as administrator"
+- Check Windows Event Viewer for error details
+
+**Out of memory errors:**
+- Edit `launch4j.xml` and increase `<maxHeapSize>1024</maxHeapSize>`
+- Rebuild the EXE with Launch4j
 
 ### Other Build Options
 

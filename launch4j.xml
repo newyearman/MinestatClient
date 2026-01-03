@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>build/libs/MinestatClient-1.0.0-all.jar</jar>
+  <outfile>MinestatClient.exe</outfile>
+  <errTitle>MinestatClient</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>https://adoptopenjdk.net/</downloadUrl>
+  <supportUrl>https://github.com/newyearman/MinestatClient</supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>src/main/resources/icon.ico</icon>
+  <jre>
+    <path>%JAVA_HOME%;%PATH%</path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+    <initialHeapSize>128</initialHeapSize>
+    <initialHeapPercent>0</initialHeapPercent>
+    <maxHeapSize>1024</maxHeapSize>
+    <maxHeapPercent>0</maxHeapPercent>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0.0</txtFileVersion>
+    <fileDescription>MinestatClient - Professional Minecraft Client</fileDescription>
+    <copyright>2024 MinestatClient Team</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0.0</txtProductVersion>
+    <productName>MinestatClient</productName>
+    <companyName>MinestatClient Team</companyName>
+    <internalName>MinestatClient</internalName>
+    <originalFilename>MinestatClient.exe</originalFilename>
+  </versionInfo>
+  <messages>
+    <startupErr>An error occurred while starting the application.</startupErr>
+    <bundledJreErr>This application requires Java 8 or higher. Please install Java and try again.</bundledJreErr>
+    <jreVersionErr>This application requires Java 8 or higher. Your Java version is too old.</jreVersionErr>
+    <launcherErr>The registry refers to a nonexistent Java Runtime Environment installation or the runtime is corrupted.</launcherErr>
+    <instanceAlreadyExistsMsg>An instance of MinestatClient is already running.</instanceAlreadyExistsMsg>
+  </messages>
+</launch4jConfig>
