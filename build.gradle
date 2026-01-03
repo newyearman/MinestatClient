@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'idea'
     id 'eclipse'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'com.minestat.client'
@@ -52,4 +53,25 @@ jar {
             'Implementation-Version': project.version
         ])
     }
+}
+
+shadowJar {
+    archiveClassifier.set('all')
+    
+    manifest {
+        attributes([
+            'Main-Class': 'com.minestat.client.MinestatClient',
+            'MixinConfigs': 'minestat.mixins.json',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version
+        ])
+    }
+    
+    // Exclude conflicting signature files from dependencies
+    exclude 'META-INF/*.SF'
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    
+    // Merge service files instead of overwriting
+    mergeServiceFiles()
 }
