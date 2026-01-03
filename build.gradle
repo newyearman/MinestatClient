@@ -44,14 +44,17 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
+// Common manifest attributes for all JARs
+def manifestAttributes = [
+    'Main-Class': 'com.minestat.client.MinestatClient',
+    'MixinConfigs': 'minestat.mixins.json',
+    'Implementation-Title': project.name,
+    'Implementation-Version': project.version
+]
+
 jar {
     manifest {
-        attributes([
-            'Main-Class': 'com.minestat.client.MinestatClient',
-            'MixinConfigs': 'minestat.mixins.json',
-            'Implementation-Title': project.name,
-            'Implementation-Version': project.version
-        ])
+        attributes(manifestAttributes)
     }
 }
 
@@ -59,12 +62,7 @@ shadowJar {
     archiveClassifier.set('all')
     
     manifest {
-        attributes([
-            'Main-Class': 'com.minestat.client.MinestatClient',
-            'MixinConfigs': 'minestat.mixins.json',
-            'Implementation-Title': project.name,
-            'Implementation-Version': project.version
-        ])
+        attributes(manifestAttributes)
     }
     
     // Exclude conflicting signature files from dependencies
