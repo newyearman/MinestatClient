@@ -1,0 +1,26 @@
+{
+  "menu.login": "Anmelden",
+  "menu.register": "Registrieren",
+  "menu.play": "Spielen",
+  "menu.settings": "Einstellungen",
+  "menu.cosmetics": "Kosmetik",
+  "menu.exit": "Beenden",
+  "menu.friends": "Freunde",
+  "menu.waypoints": "Wegpunkte",
+  
+  "settings.video": "Videoeinstellungen",
+  "settings.language": "Sprache",
+  "settings.performance": "Leistung",
+  "settings.cosmetics": "Kosmetikeinstellungen",
+  "settings.account": "Kontoeinstellungen",
+  
+  "login.offline": "Offline-Modus",
+  "login.premium": "Premium-Modus",
+  "login.username": "Benutzername",
+  "login.password": "Passwort",
+  "login.email": "E-Mail",
+  "login.remember": "Angemeldet bleiben",
+  "login.switch": "Modus wechseln",
+  "login.microsoft": "Mit Microsoft anmelden",
+  "login.mojang": "Mit Mojang anmelden"
+}
