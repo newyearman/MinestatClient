@@ -1,0 +1,49 @@
+# Gradle
+.gradle/
+build/
+out/
+bin/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# NetBeans
+nbproject/
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
+
+# Minecraft
+run/
+logs/
+crash-reports/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temp files
+*.tmp
+*.log
+*.swp
+*.swo
+*~
+
+# Build artifacts
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Config
+config/local*.json
